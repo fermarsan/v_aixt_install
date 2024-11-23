@@ -1,4 +1,4 @@
-# V and Aixt instaling script
+# V and Aixt installing script
 
 This installs **_v_** *0.4.8* and **_aixt_** *0.1.7* adding both to _PATH_ for Windows x64.
 
