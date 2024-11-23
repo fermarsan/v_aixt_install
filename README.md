@@ -1,6 +1,6 @@
 # V and Aixt instaling script
 
-This installs _v_ 0.4.8 and _aixt_ 0.1.7 for Windows x64.
+This installs **_v_** *0.4.8* and **_aixt_** *0.1.7* adding both to _PATH_ for Windows x64.
 
 Follow these steps:
 
