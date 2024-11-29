@@ -30,5 +30,8 @@ if (-not (Get-Command aixt)) {  # if the command doesn't exist
     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
 }
 
+# Restore the execution policy
+Set-ExecutionPolicy Restricted
+
 Write-Output "Process completed."
 Read-Host -Prompt "Press any key to continue"
