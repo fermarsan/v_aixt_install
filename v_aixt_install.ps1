@@ -23,6 +23,7 @@ if (-not (Get-Command v)) {  # if 'v doesn't exist
     } 
 
     # Compile V
+    Write-Output "`nCompile V..."
     cd c:\v
     & ".\make.bat"
 
@@ -32,6 +33,7 @@ if (-not (Get-Command v)) {  # if 'v doesn't exist
     #     $env:PATH += ";C:\v\"
     #     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
     # }
+    Write-Output "`nCreating V symlink..."
     .\v.exe symlink
 }
 
@@ -51,6 +53,7 @@ if (-not (Get-Command aixt)) {  # if 'aixt' doesn't exist
 
 
     # Compile Aixt
+    Write-Output "`nCompile Aixt..."
     cd c:\aixt
     & ".\make.bat"
 
@@ -60,6 +63,7 @@ if (-not (Get-Command aixt)) {  # if 'aixt' doesn't exist
     #     $env:PATH += ";C:\aixt\"
     #     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
     # }
+    Write-Output "`nCreating Aixt symlink..."
     .\aixt.exe symlink
 }
 
