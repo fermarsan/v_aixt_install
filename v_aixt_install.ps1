@@ -1,9 +1,14 @@
 Set-PSDebug -Trace 0    #echo off
 
 # this is a batch file to automate the installing of V and Aixt transpilers on Windows
-# copy 'v_windows.zip' and 'aixt_windows.zip' in the same folder of this file after executing as administrator
 
-# Unzip v_windows.zip to C:\v
+# Download arduino-cli.zip from official page
+if (-not (Test-Path -Path "..\v.zip")) {  # if the .zip file doesn't exist
+    Write-Output "`nDownloading v.zip from official repository..."
+    Invoke-WebRequest "https://github.com/vlang/v/archive/refs/heads/master.zip" -OutFile "..\v.zip"
+}
+
+# Unzip v.zip to C:\v
 if (-not (Test-Path -Path 'C:\v')) {    # if the folder doesn't exist
     Write-Output 'Unzipping v_windows.zip to C:\v...'
     Expand-Archive -Path '.\v_windows.zip' -DestinationPath 'C:\'
