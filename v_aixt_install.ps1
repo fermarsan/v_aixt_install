@@ -10,61 +10,47 @@ if (-not (Get-Command git)) {  # if 'git' doesn't exist
 
 # Install V
 if (-not (Get-Command v)) {  # if 'v doesn't exist
-    # Download v.zip from the official repository
-    if (-not (Test-Path -Path "..\v.zip")) {  # if the .zip file doesn't exist
-        Write-Output "`nDownloading v.zip from the official repository..."
-        Invoke-WebRequest "https://github.com/vlang/v/archive/refs/heads/master.zip" -OutFile "..\v.zip"
+    # Clone V from itse repository
+    if (-not (Test-Path -Path "C:\v")) {  # if the C:\v folder doesn't exist
+        Write-Output "`nCloning V from its repository..."
+        # $script_path = Get-Location   # saves the original location path of this script
+        cd c:\
+        git clone --depth=1 https://github.com/vlang/v
     }
-
-    # Unzip v.zip to C:\v
-    if (-not (Test-Path -Path "C:\v")) {    # if the folder doesn't exist
-        Write-Output "`nUnzipping v.zip to C:\v..."
-        Expand-Archive -Path "..\v.zip" -DestinationPath "C:\v"
-    } 
-
+    
     # Compile V
-    Write-Output "`nCompile V..."
-    cd c:\v
-    & ".\make.bat"
-
+    if (-not (Test-Path -Path "C:\v\v.exe")) {  # if the C:\v\v.exe file doesn't exist
+        Write-Output "`nCompiling V..."
+        cd v
+        & "C:\v\make.bat"
+    }
     # Create v symlink
-    # if (-not (Get-Command v)) { # if the command doesn't exist
-    #     Write-Output "`nCreating V symlink..."
-    #     $env:PATH += ";C:\v\"
-    #     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
-    # }
     Write-Output "`nCreating V symlink..."
-    .\v.exe symlink
+    C:\v\v.exe symlink
 }
+
+# restore the original location path 
+# cd $script_path
 
 # Install Aixt
 if (-not (Get-Command aixt)) {  # if 'aixt' doesn't exist
-    # Download aixt.zip from the official repository
-    if (-not (Test-Path -Path "..\aixt.zip")) {  # if the .zip file doesn't exist
-        Write-Output "`nDownloading aixt.zip from the official repository..."
-        Invoke-WebRequest "https://github.com/fermarsan/aixt/archive/refs/heads/main.zip" -OutFile "..\aixt.zip"
+    # Clone Aixt from its repository
+    if (-not (Test-Path -Path "C:\aixt")) {  # if the C:\aixt folder doesn't exist
+        Write-Output "`nCloning Aixt from its repository..."
+        cd c:\
+        git clone https://github.com/fermarsan/aixt.git
     }
-
-    # Unzip aixt.zip to C:\aixt
-    if (-not (Test-Path -Path 'C:\aixt')) { # if the folder doesn't exist
-        Write-Output "`nUnzipping aixt.zip to C:\aixt..."
-        Expand-Archive -Path '..\aixt.zip' -DestinationPath 'C:\aixt'
-    }
-
 
     # Compile Aixt
-    Write-Output "`nCompile Aixt..."
-    cd c:\aixt
-    & ".\make.bat"
-
-    # # Create aixt symlink
-    # if (-not (Get-Command aixt)) {  # if the command doesn't exist
-    #     Write-Output "`nCreating Aixt symlink..."
-    #     $env:PATH += ";C:\aixt\"
-    #     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
-    # }
+    if (-not (Test-Path -Path "C:\aixt\aixt.exe")) {  # if the C:\aixt\aixt.exe file doesn't exist
+        Write-Output "`nCompiling Aixt..."
+        cd aixt
+        & "C:\aixt\make.bat"
+    }
+    
+    # Create aixt symlink
     Write-Output "`nCreating Aixt symlink..."
-    .\aixt.exe symlink
+    C:\aixt\aixt.exe symlink
 }
 
 # Restore the execution policy
