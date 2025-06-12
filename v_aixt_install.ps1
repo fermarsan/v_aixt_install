@@ -6,7 +6,10 @@ Set-PSDebug -Trace 0    #echo off
 if (-not (Get-Command git)) {  # if 'git' doesn't exist
     Write-Output "`nInstalling git..."
     winget install --id Git.Git -e --source winget
-}
+} 
+else {
+    Write-Output "`ngit is already installed."
+} 
 
 # Install V
 if (-not (Get-Command v)) {  # if 'v doesn't exist
@@ -27,6 +30,11 @@ if (-not (Get-Command v)) {  # if 'v doesn't exist
     # Create v symlink
     Write-Output "`nCreating V symlink..."
     C:\v\v.exe symlink
+}
+else {
+    Write-Output "`nV is already installed."
+    Write-Output "`nUpdating V..."
+    v up    # update V
 }
 
 # restore the original location path 
@@ -52,6 +60,9 @@ if (-not (Get-Command aixt)) {  # if 'aixt' doesn't exist
     Write-Output "`nCreating Aixt symlink..."
     C:\aixt\aixt.exe symlink
 }
+else {
+    Write-Output "`nAixt is already installed."
+} 
 
 # Restore the execution policy
 Set-ExecutionPolicy Restricted

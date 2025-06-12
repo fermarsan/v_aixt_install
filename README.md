@@ -1,6 +1,6 @@
 # V and Aixt installing script
 
-This script installs **_v_** *0.4.8* and **_aixt_** *0.1.7* adding both to _PATH_ for Windows x64.
+This script installs the most recent versions of [**_v_**](https://vlang.io/) and [**_aixt_**](https://github.com/fermarsan/aixt) adding both to the _PATH_ environment variable for Windows x64.
 
 Follow these steps:
 
