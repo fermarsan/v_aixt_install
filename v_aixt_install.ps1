@@ -3,7 +3,7 @@ Set-PSDebug -Trace 0    #echo off
 # this is a batch file to automate the installing of V and Aixt transpilers on Windows
 
 # Install git
-if (-not (Get-Command git)) {  # if 'git' doesn't exist
+if (-not (Get-Command -Name git -ErrorAction SilentlyContinue)) {  # if 'git' doesn't exist
     Write-Output "`nInstalling git..."
     winget install --id Git.Git -e --source winget
 } 
@@ -12,8 +12,8 @@ else {
 } 
 
 # Install V
-if (-not (Get-Command v)) {  # if 'v doesn't exist
-    # Clone V from itse repository
+if (-not (Get-Command -Name v -ErrorAction SilentlyContinue)) {  # if 'v doesn't exist
+    # Clone V from its repository
     if (-not (Test-Path -Path "C:\v")) {  # if the C:\v folder doesn't exist
         Write-Output "`nCloning V from its repository..."
         # $script_path = Get-Location   # saves the original location path of this script
@@ -34,14 +34,14 @@ if (-not (Get-Command v)) {  # if 'v doesn't exist
 else {
     Write-Output "`nV is already installed."
     Write-Output "`nUpdating V..."
-    v up    # update V
+    C:\v\v.exe up    # update V
 }
 
 # restore the original location path 
 # cd $script_path
 
 # Install Aixt
-if (-not (Get-Command aixt)) {  # if 'aixt' doesn't exist
+if (-not (Get-Command -Name aixt -ErrorAction SilentlyContinue)) {  # if 'aixt' doesn't exist
     # Clone Aixt from its repository
     if (-not (Test-Path -Path "C:\aixt")) {  # if the C:\aixt folder doesn't exist
         Write-Output "`nCloning Aixt from its repository..."
@@ -53,7 +53,7 @@ if (-not (Get-Command aixt)) {  # if 'aixt' doesn't exist
     if (-not (Test-Path -Path "C:\aixt\aixt.exe")) {  # if the C:\aixt\aixt.exe file doesn't exist
         Write-Output "`nCompiling Aixt..."
         cd aixt
-        & "C:\v\v.exe src -o aixt.exe"  # & "C:\aixt\make.bat"
+        C:\v\v.exe src -o aixt.exe  # & "C:\aixt\make.bat"
     }
     
     # Create aixt symlink
