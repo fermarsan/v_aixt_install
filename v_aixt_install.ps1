@@ -53,7 +53,7 @@ if (-not (Get-Command aixt)) {  # if 'aixt' doesn't exist
     if (-not (Test-Path -Path "C:\aixt\aixt.exe")) {  # if the C:\aixt\aixt.exe file doesn't exist
         Write-Output "`nCompiling Aixt..."
         cd aixt
-        & "C:\aixt\make.bat"
+        & "C:\v\v.exe src -o aixt.exe"  # & "C:\aixt\make.bat"
     }
     
     # Create aixt symlink
