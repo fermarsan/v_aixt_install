@@ -55,6 +55,9 @@ if (-not (Get-Command -Name aixt -ErrorAction SilentlyContinue)) {  # if 'aixt' 
         cd aixt
         C:\v\v.exe src -o aixt.exe  # & "C:\aixt\make.bat"
     }
+
+    # Check the installed version of Aixt 
+    C:\aixt\aixt.exe version
     
     # Create aixt symlink
     Write-Output "`nCreating Aixt symlink..."
