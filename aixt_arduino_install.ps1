@@ -4,16 +4,16 @@ Set-PSDebug -Trace 0    #echo off
 # also installs the Arduino CLI tool
 
 Write-Output "`nChecking git..."
-Start-Process powershell -ArgumentList "-NoExit -File .\git_install.ps1" -WorkingDirectory $PWD -Wait # -Verb RunAs
+Start-Process powershell -ArgumentList "-NoExit -File .\git_install.ps1" -WorkingDirectory $PWD -Wait 
 
 Write-Output "`nChecking V..."
-Start-Process powershell -ArgumentList "-NoExit -File .\v_install.ps1" -WorkingDirectory $PWD -Wait # -Verb RunAs
+Start-Process powershell -ArgumentList "-NoExit -File .\v_install.ps1" -WorkingDirectory $PWD -Wait 
 
 Write-Output "`nChecking Aixt..."
-Start-Process powershell -ArgumentList "-NoExit -File .\aixt_install.ps1" -WorkingDirectory $PWD -Wait # -Verb RunAs
+Start-Process powershell -ArgumentList "-NoExit -File .\aixt_install.ps1" -WorkingDirectory $PWD -Wait 
 
 Write-Output "`nChecking Arduino CLI..."
-Start-Process powershell -ArgumentList "-NoExit -File .\arduino-cli_install.ps1" -WorkingDirectory $PWD -Verb RunAs  -Wait
+Start-Process powershell -ArgumentList "-NoExit -File .\arduino-cli_install.ps1" -WorkingDirectory $PWD -Wait
 
 
 Write-Output "`nProcess completed."

@@ -26,7 +26,7 @@ else {
 }
 
 # install AVR core
-& "C:\arduino-cli\arduino-cli core install arduino:avr"
+C:\arduino-cli\arduino-cli core install arduino:avr
 
 Write-Output "`nProcess completed."
 Read-Host -Prompt "Press any key to continue"
