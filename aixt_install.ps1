@@ -1,6 +1,7 @@
 Set-PSDebug -Trace 0    #echo off
 
-# Install Aixt
+Write-Output "`nChecking Aixt..."
+
 if (-not (Get-Command -Name aixt -ErrorAction SilentlyContinue)) {  # if 'aixt' doesn't exist
     # Clone Aixt from its repository
     if (-not (Test-Path -Path "C:\aixt")) {  # if the C:\aixt folder doesn't exist
@@ -27,4 +28,6 @@ else {
     Write-Output "`nAixt is already installed."
 } 
 
+Write-Output "`nProcess completed."
+Read-Host -Prompt "Press any key to continue"
 [System.Environment]::Exit(0)   # exit to the main script

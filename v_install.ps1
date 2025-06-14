@@ -1,6 +1,7 @@
 Set-PSDebug -Trace 0    #echo off
 
-# Install V
+Write-Output "`nChecking V..."
+
 if (-not (Get-Command -Name v -ErrorAction SilentlyContinue)) {  # if 'v doesn't exist
     # Clone V from its repository
     if (-not (Test-Path -Path "C:\v")) {  # if the C:\v folder doesn't exist
@@ -26,4 +27,6 @@ else {
     C:\v\v.exe up    # update V
 }
 
+Write-Output "`nProcess completed."
+Read-Host -Prompt "Press any key to continue"
 [System.Environment]::Exit(0)   # exit to the main script
