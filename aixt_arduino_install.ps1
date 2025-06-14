@@ -13,4 +13,4 @@ Write-Output "`nChecking Aixt..."
 Start-Process powershell -ArgumentList "-NoExit -File .\aixt_install.ps1" -WorkingDirectory $PWD -Wait # -Verb RunAs
 
 Write-Output "`nChecking Arduino CLI..."
-Start-Process powershell -ArgumentList "-NoExit -File .\arduino-cli_install.ps1" -WorkingDirectory $PWD -Wait # -Verb RunAs
+Start-Process powershell -ArgumentList "-NoExit -File .\arduino-cli_install.ps1" -WorkingDirectory $PWD -Verb RunAs  -Wait
