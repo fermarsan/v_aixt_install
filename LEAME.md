@@ -1,15 +1,18 @@
-# Script de instalación de V y Aixt
+# Scripts de instalación de Aixt
 
-Este script instala las versiones mas reciantes de [**_v_**](https://vlang.io/) y [**_aixt_**](https://github.com/fermarsan/aixt) a partir del código fuente de sus repositorios, añadiendo ambos a la variable de entorno _PATH_ para Windows x64. Adicionalmente, se instala **_git_** si aún lo está.
+Este repositorio contiene los scripts para instalar la versión más reciente del Framework de Programación de Microcontroladores [**_Aixt_**](https://github.com/fermarsan/aixt) y sus dependencias.
 
-Siga estos pasos:
 
-- abrir **_PowerShell_** como administrador 
-    - pulsar: ⊞ Win + "PowerShell"
-    - clic derecho sobre el icono de **_PowerShell_** y seleccionar **"Ejecutar como administrador"**
-- ejecutar el comando: `Set-ExecutionPolicy Unrestricted`
-- desde **_PowerShell_** abrir la carpeta con el script `aixt_install.ps1`.
-    - ejemplo: `cd C:\Users\User1\Downloads\aixt_install`
-- ejecutar el script como: `.\aixt_install.ps1`
+Cada script debe ejecutarse haciendo clic con el botón derecho del ratón sobre él y seleccionando `Ejecutar con PowerShell` en el menú contextual.
 
-**NOTA:** Si adicionalmente se desea instalar **_arduino-cli_**, se tiene que ejecutar el script `.\aixt_arduino_install.ps1` en lugar de `.\aixt_install.ps1`
+![./assets/run_with_PS.png](./assets/run_with_PS.png)
+
+Ejecute los scripts en este orden:
+
+- `git_install.ps1`
+- `v_install.ps1`
+- `aixt_install.ps1`
+
+Para trabajar con cualquiera de las placas Arduino AVR ejecute también:
+
+- `arduino-cli_install.ps1`
