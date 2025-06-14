@@ -16,3 +16,5 @@ Run the scripts in this order:
 For working with any of Arduino AVR boards run too:
 
 - `arduino-cli_install.ps1`
+
+These scripts have been tested on Windows 10 and 11.

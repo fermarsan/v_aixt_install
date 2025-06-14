@@ -16,3 +16,5 @@ Ejecute los scripts en este orden:
 Para trabajar con cualquiera de las placas Arduino AVR ejecute también:
 
 - `arduino-cli_install.ps1`
+
+Estos scripts han sido probados en Windows 10 y 11.
