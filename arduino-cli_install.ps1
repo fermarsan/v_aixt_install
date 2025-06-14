@@ -27,3 +27,5 @@ else {
 
 # install AVR core
 arduino-cli core install arduino:avr
+
+[System.Environment]::Exit(0)   # exit to the main script

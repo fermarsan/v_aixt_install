@@ -11,3 +11,5 @@ if (-not (Get-Command -Name git -ErrorAction SilentlyContinue)) {  # if 'git' do
 else {
     Write-Output "`ngit is already installed."
 } 
+
+[System.Environment]::Exit(0)   # exit to the main script

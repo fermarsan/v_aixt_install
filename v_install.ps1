@@ -29,3 +29,5 @@ else {
     Write-Output "`nUpdating V..."
     C:\v\v.exe up    # update V
 }
+
+[System.Environment]::Exit(0)   # exit to the main script
