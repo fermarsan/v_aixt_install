@@ -1,7 +1,5 @@
+# Description: This script needs to be run as Administrator
 Set-PSDebug -Trace 0    #echo off
-
-# this is a batch file to automate the installing of V and Aixt transpilers on Windows
-# and the Arduino CLI tool
 
 if (-not (Get-Command -Name arduino-cli -ErrorAction SilentlyContinue)) { # if the command doesn't exist
     # Download arduino-cli.zip from the official page

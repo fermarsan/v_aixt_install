@@ -70,5 +70,3 @@ else {
 # Restore the execution policy
 Set-ExecutionPolicy Restricted
 
-Write-Output "`nProcess completed."
-Read-Host -Prompt "Press any key to continue"

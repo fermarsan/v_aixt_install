@@ -1,9 +1,5 @@
 Set-PSDebug -Trace 0    #echo off
 
-# this is a batch file to automate the installing of V and Aixt transpilers on Windows
-# and the Arduino CLI tool
-
-
 # Install V
 if (-not (Get-Command -Name v -ErrorAction SilentlyContinue)) {  # if 'v doesn't exist
     # Clone V from its repository
